@@ -1,0 +1,33 @@
+
+<div class="divposition">
+ <div align="center"><h3>合作伙伴</h3></div>
+<br/>
+ <a class='btn btn-default btn-lg' href="{:U('Admin/About/addh')}">添加</a>
+<br/><br/>
+<table class="table table-bordered" width="1300">
+<thead>
+      <tr class="info">
+              <th class="baseth">图片</th>
+              <th class="baseth" width="200">标题</th>
+              <th class="baseth">内容</th>
+              <th class="baseth">操作</th>
+      </tr>
+</thead>
+<tbody>
+<foreach name="name" item="vo" >
+   <tr>
+       <td class="basetd">
+       <img src=".\themes\simplebootx\Public\about\img\{$vo.about_address}" width="140" height="140">
+       </td>
+       <td class="basetd" width="200">{$vo.about_title}</td>
+       <td class="basetd">{$vo.about_content}</td>
+       <td class="basetd" width="120" ><a href="{:U('Admin/About/edit',array('id'=>$vo['id']))}">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  href="{:U('Admin/About/deleat',array('id'=>$vo['id']))}">删除</a></td>
+     </tr>
+</foreach>
+</tbody>
+
+
+</table>
+
+         </div>
+

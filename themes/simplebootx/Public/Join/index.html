@@ -1,0 +1,100 @@
+
+
+<tc_include file="Public:head" />
+<body class="body-white">
+    <tc_include file="Public:nav" />
+
+    <tc_include file="Public:scripts"/>
+    <script src="__TMPL__Public/assets/js/slippry.min.js"></script>
+    <script src="__TMPL__Public/assets/js/jquery-3.1.1.min.js"></script>
+<img src="__TMPL__Public/join/img/main.jpg"  style="width:1920px;height:350px">
+    <div align="center" style="margin-top: 30px"><h3>人才招聘</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+      <link href="__TMPL__Public/join/css/join.css" rel="stylesheet">
+<div style="width: 1000px;height: 460px;margin: 20px auto;">
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped" width="800px" id="join-table">
+          <thead>
+            <tr class="info">
+              <th>职位名称</th>
+              <th>职位类型</th>
+              <th>工作年限</th>
+               <th>薪水范围</th>
+              <th>招聘人数</th>
+              <th>工作地区</th>
+              <th>学历要求</th>
+              <th>发布时间</th>
+              <th>申请职位</th>
+            </tr>
+          </thead>
+          <tbody>
+          <volist name="data" id="vo">
+                        <tr>
+                            <td><a href="{:U('Portal/Join/position',array('id'=>$vo['id']))}">{$vo.join_title}</a></td>
+                            <td><a href="{:U('Portal/Join/type',array('id'=>$vo['id']))}">{$vo.join_type}</a></td>工作年限0应届毕业生1在校大学生2指1年以上3指2年以上4指3年以上5指5年以上6指8年以上7指10年以上8指不限
+                            <td>{$vo.join_agelimit}
+                                <switch name="vo.join_agelimit">
+                                <case value="0">应届毕业生</case>
+                                <case value="1">在校大学生</case>
+                                <case value="2">1年以上</case>
+                                <case value="3">2年以上</case>
+                                <case value="4">3年以上</case>
+                                <case value="5">5年以上</case>
+                                <case value="6">8年以上</case>
+                                <case value="7">10年以上</case>
+                                <case value="8">不限</case>
+                                <default />工作年限</switch>
+                            </td>
+                            <td>{$vo.join_pay}</td>
+                            <td>{$vo.join_number}</td>
+                            <td>{$vo.join_district}</td>
+                            <td>{$vo.join_education}</td>
+                            <td>{$vo.join_time}</td>
+                            <td><a href="{:U('Portal/Join/apply',array('id'=>$vo['id']))}">申请职位</a></td>
+                        </tr>
+        </volist>
+          </tbody>
+        </table>
+    </div>
+
+    <nav aria-label="Page navigation" style="float:right">
+<input type="hidden" id="hidden" name="field＿name" value="{$page}">
+      <ul class="pagination">
+        <li>
+        <php>
+        if($limit<=1){
+        $start = 1;
+        }else{
+        $start = $limit-1;
+        }
+        </php>
+
+          <a href="{:U('Portal/Join/index',array('page'=>$start))}" aria-label="Previous" id="insert-a">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+
+         <php>
+         for($i = 1;$i<=$page;$i++)
+         {
+         $url = U('Portal/Join/index',array('page'=>$i));
+          echo  '<li><a href="'.$url.'">'.$i.'</a></li>';
+        }
+          </php>
+            <php>
+        if($limit>=$page){
+        $end = $page;
+        }else{
+        $end = $limit+1;
+        }
+        </php>
+          <li><a href="{:U('Portal/Join/index',array('page'=>$end))}" id="Next">&raquo;</a></li>
+        </li>
+      </ul>
+    </nav>
+<tc_include file="Public:footer"/>
+    </div>

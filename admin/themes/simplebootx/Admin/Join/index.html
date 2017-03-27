@@ -1,0 +1,31 @@
+<include file="Public:base" />
+
+
+<!--  -->
+      <link href="__TMPL__Public/Join/css/index.css" rel="stylesheet">
+<!--  -->
+
+
+<div id="main">
+      <ul id="myTab" class="nav nav-tabs">
+         <li class="active"><a href="#edit" data-toggle="tab">
+            招聘管理</a></li>
+         <li><a href="#add" data-toggle="tab">添加招聘</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+          <!-- 招聘管理 -->
+         <div class="tab-pane fade in active" id="edit">
+          <include file=".\admin\themes\simplebootx\admin\Join\edit.html"/>
+         </div>
+         <!-- 招聘管理 -->
+
+
+         <div class="tab-pane fade" id="add">
+              <!-- 添加招聘 -->
+              <include file=".\admin\themes\simplebootx\admin\Join\add.html"/>
+
+              <!-- 添加招聘 -->
+         </div>
+
+      </div>
+</div>

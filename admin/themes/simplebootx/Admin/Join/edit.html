@@ -1,0 +1,65 @@
+
+    <div align="center" id="editdivalign"><h3>招聘管理</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+      <link href="__TMPL__Public/join/css/join.css" rel="stylesheet">
+<div id="editmain">
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped" width="800px" id="join-table">
+          <thead>
+            <tr class="info">
+                        <th>职位名称</th>
+                        <th>职位类型</th>
+                        <th>工作年限</th>
+                         <th>薪水范围</th>
+                        <th>招聘人数</th>
+                        <th>工作地区</th>
+                        <th>学历要求</th>
+                        <th>发布时间</th>
+                        <th>招聘管理</th>
+            </tr>
+          </thead>
+          <tbody>
+          <volist name="data" id="vo">
+                        <tr>
+                            <td>{$vo.join_title}</td>
+                            <td>{$vo.join_type}</td>
+                            <td>
+                             <switch name="vo.join_agelimit">
+                            <case value="0">应届毕业生</case>
+                            <case value="1">在校大学生</case>
+                            <case value="2">1年以上</case>
+                            <case value="3">2年以上</case>
+                            <case value="4">3年以上</case>
+                            <case value="5">5年以上</case>
+                            <case value="6">8年以上</case>
+                            <case value="7">10年以上</case>
+                            <default />工作年限</switch>
+                            </td>
+                            <td>{$vo.join_pay}</td>
+                            <td>{$vo.join_number}</td>
+                            <td>{$vo.join_district}</td>
+                            <td>
+                            <switch name="vo.join_education" >
+                            <case value="0">中专及以上</case>
+                            <case value="1">高中</case>
+                            <case value="2">专科</case>
+                            <case value="3">本科</case>
+                            <case value="4">硕士</case>
+                            <case value="5">博士及以上</case>
+                            <default />学历要求</switch>
+                            </td>
+                            <td>{$vo.join_time}</td>
+                            <td><a href="{:U('Admin/Join/write',array('id'=>$vo['id']))}">修改</a>&nbsp;|&nbsp;<a href="{:U('Admin/Join/delete',array('id'=>$vo['id']))}">删除</a></td>
+                        </tr>
+        </volist>
+          </tbody>
+        </table>
+    </div>
+
+
+    </div>

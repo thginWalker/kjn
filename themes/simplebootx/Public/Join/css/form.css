@@ -1,0 +1,63 @@
+    .emptyfont{
+  font-size: 30px;
+    }
+
+  .basetd{
+    width:100px;
+    text-align:right;
+    position: relative;
+    left: -10px;
+  }
+  .importtd{
+    text-align:right;
+    position: relative;
+    left: -10px;
+
+  }
+  .baseinput{
+    height: 35px !important;
+    width:400px !important;
+    display: inline-block !important;
+  }
+  #email{
+    height: 35px;
+    width:400px;
+    display: inline-block;
+  }
+  .xinfont{
+    font-size: 30px;
+    color: red;
+  }
+  .heighttd{
+    height:70px;
+  }
+  #table1{
+    margin:0 auto;
+  }
+  #table2{
+    margin:0 auto;
+    position: relative;
+    left: -15px;
+  }
+  #table3{
+    margin:0 auto;
+    position: relative;
+    left: -15px;
+  }
+  #table4{
+    margin:0 auto;
+    position: relative;
+    left: -100px;
+  }
+  #main{
+    width: 900px;
+    margin: 20px auto;
+  }
+  .selectheight{
+    height: 30px;
+  }
+  #verify{
+    height: 35px;
+    width:100px;
+    display: inline-block;
+  }

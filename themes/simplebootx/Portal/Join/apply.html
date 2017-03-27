@@ -1,0 +1,620 @@
+<!-- 将Pure添加到项目 -->
+<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+<style type="text/css">
+  .prompt{
+    color:red;
+  }
+  .birthday{
+    position: relative;
+    top:26px;
+  }
+  #divbutton{
+    margin-top: 30px;
+  }
+</style>
+<div id="top"></div>
+<tc_include file="Public:head" />
+<body class="body-white">
+
+    <tc_include file="Public:nav" />
+    <tc_include file="Public:scripts"/>
+    <script src="__TMPL__Public/assets/js/slippry.min.js"></script>
+    <script src="__TMPL__Public/assets/js/jquery.validate.min.js"></script>
+<img src="__TMPL__Public/join/img/main.jpg"  id="big">
+    <div align="center" id="divtitlte"><h3>申请职位</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+      <link href="__TMPL__Public/join/css/apply.css" rel="stylesheet">
+      <link href="__TMPL__Public/join/css/form.css" rel="stylesheet">
+      <link href="__TMPL__Public/join/css/span.css" rel="stylesheet">
+
+
+
+<div id="main">
+<div class="alert alert-success"><b>您要申请的职位:</b> {$name}</div>
+<p class="lead"><h6><b>个人基本信息</b></h6></p>
+    <ul class="nav nav-list">
+         <li class="divider"></li>
+    </ul>
+<form role="form" id="applyForm"  method="post"  action="{:U('Portal/Join/preservation')}" enctype="multipart/form-data">
+<input type="hidden" name="joinid" value="{$joinid}">
+<input type="hidden" name="position" value="{$name}">
+  <table id="table1">
+          <tr class="heighttd">
+            <td class="basetd">
+                <span>姓名:</span><span id="span1">
+                <font class="xinfont">*</font></span>
+            </td>
+           <td>
+                 <input  type="text" class="baseinput" id="name" name="name"><br/><font id="nameprompt" class="prompt"></font>
+          </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="basetd">
+                <span>性别:</span><span id="span2">
+                <font class="xinfont">*</font></span>
+            </td>
+            <td>
+                <select id="sex" name="sex" class="selectheight" >
+                    <option selected="selected">请选择:</option>
+                    <option value="1">男</option>
+                    <option value="0">女</option>
+                </select>
+                <br/><font id="sexprompt" class="prompt"></font>
+              </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="importtd">
+                <span>出生日期:</span><span id="span3">
+                <font class="xinfont">*</font></span>
+            </td>
+            <td>
+            <span id="spanselect">
+          <select id="sel_year" name="year"></select>年
+          <select id="sel_month" name="month"></select>月
+          <select id="sel_day" name="day"></select>日
+          </span>
+
+                  <br/><font id="sel_yearprompt" class="prompt birthday"></font>
+                  <br/><font id="sel_monthprompt" class="prompt  birthday"></font>
+                  <br/><font id="sel_dayprompt" class="prompt  birthday"></font>
+
+            </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="importtd">
+                <span>年龄:</span><span id="span3">
+                <font class="xinfont">&nbsp;</font></span>
+            </td>
+            <td>
+       <input  type="text" class="baseinput" id="age" name="age">
+              <br/><font id="ageprompt" class="prompt"></font>
+            </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="importtd">
+              <span>通讯地址:</span><span id="span4">
+              <font class="emptyfont">&nbsp;</font></span>
+            </td>
+            <td>
+              <input  type="text" class="baseinput" id="message" name="message">
+              <br/><font id="messageprompt" class="prompt"></font>
+            </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="importtd">
+                <span>联系电话:</span><span id="span5">
+                <font class="emptyfont">&nbsp;</font></span>
+            </td>
+            <td>
+                <input  type="text" class="baseinput"  id="phone" name="phone">
+                <br/><font id="phoneprompt" class="prompt"></font>
+            </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="importtd">
+              <span>手机:</span><span id="span6">
+              <font class="xinfont">*</font></span>
+            </td>
+            <td>
+              <input  type="text" class="baseinput"  id="cellphone" name="cellphone">
+              <br/><font id="cellphoneprompt" class="prompt"></font>
+            </td>
+          </tr>
+          <tr class="heighttd">
+            <td class="importtd">
+              <span>QQ:</span><span id="span7">
+              <font class="emptyfont">&nbsp;</font></span>
+            </td>
+            <td>
+                <input  type="text" class="baseinput" id="QQ" name="QQ">
+                <br/><font id="QQprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+                <span>邮箱:</span><span id="span8">
+                <font class="xinfont">*</font></span>
+              </td>
+              <td>
+                 <input type="email" class="form-control"  id="email" name="mailbox">
+                 <br/><font id="emailprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+                <span>婚姻状况:</span><span id="span9">
+                <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                <select  class="selectheight" id="marriage" name="marriage">
+                   <option selected="selected">请选择:</option>
+                    <option value="0">未婚:</option>
+                    <option value="1">已婚:</option>
+                    <option value="2">其他:</option>
+                </select>
+                <br/><font id="marriageprompt" class="prompt"></font>
+          </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+                <span>身高:</span><span id="span10">
+                <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                <input  type="text" class="baseinput" id="height" name="height">
+                <span style="margin-right: 5px;">cm</span>
+                <br/><font id="heightprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+                  <span>户口所在地:</span><span id="span11">
+                  <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                  <input  type="text" class="baseinput" id="penetration" name="penetration">
+                  <br/><font id="penetrationprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+                <span>籍贯:</span><span id="span12">
+                <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                <input  type="text" class="baseinput" id="present" name="present">
+                <br/><font id="presentprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+                  <span>个人照片:</span><span id="span14">
+                  <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                              <input type="file" id="picture" name="picture">
+                              <br/><font id="pictureprompt" class="prompt"></font>
+                  <p class="help-block">请选择您的照片</p>
+                              </td>
+            </tr>
+
+    </table>
+
+
+  <p class="lead"><h6><b>教育背景</b></h6></p>
+      <ul class="nav nav-list">
+           <li class="divider"></li>
+      </ul>
+      <table id="table2">
+          <tr class="heighttd">
+              <td class="basetd">
+                <span>学历:</span><span id="span15">
+                <font class="xinfont">*</font></span>
+              </td>
+              <td>
+                <select  class="selectheight" id="education" name="education">
+                   <option selected="selected">请选择:</option>
+                    <option value="0">中专及以上</option>
+                    <option value="1">高中</option>
+                    <option value="2">专科</option>
+                    <option value="3">本科</option>
+                    <option value="4">硕士</option>
+                    <option value="5">博士及以上</option>
+                </select>
+                <br/><font id="educationprompt" class="prompt"></font>
+          </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="basetd">
+              <span >专业:</span><span id="span16">
+              <font class="xinfont">*</font></span>
+              </td>
+              <td>
+              <input  type="text" class="baseinput" id="professional" name="professional">
+              <br/><font id="professionalprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="basetd">
+                  <span>毕业院校:</span><span id="span17">
+                  <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                  <input  type="text" class="baseinput" id="school" name="school">
+                   <br/><font id="schoolprompt" class="prompt"></font>
+              </td>
+            </tr>
+      </table>
+
+     <p class="lead"><h6><b>工作经历</b></h6></p>
+      <ul class="nav nav-list">
+           <li class="divider"></li>
+      </ul>
+
+  <table id="table3">
+
+   <tr class="heighttd">
+              <td class="basetd">
+                <span>工作年限:</span><span id="span18">
+                <font class="xinfont">*</font></span>
+              </td>
+              <td>
+                <select  class="selectheight" id="workingyear" name="workingyear">
+                     <option selected="selected">请选择:</option>
+                    <option value="0">应届毕业生</option>
+                    <option value="1">在校大学生</option>
+                    <option value="2" >1年以上</option>
+                    <option value="3">2年以上</option>
+                    <option value="4">3年以上</option>
+                    <option value="5">5年以上</option>
+                    <option value="6">8年以上</option>
+                    <option value="7">10年以上</option>
+                </select>
+                <br/><font id="workingyearprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="importtd">
+              <span width="100">工作性质:</span>
+              <span id="span19"><font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                <select  class="selectheight" id="quality" name="quality">
+                    <option selected="selected">请选择:</option>
+                    <option value="0">全职</option>
+                    <option value="1">兼职</option>
+                    <option value="2">临时</option>
+                    <option value="3">不限</option>
+              </select>
+              <br/><font id="qualityprompt" class="prompt"></font>
+          </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="basetd">
+                  <span>期望月薪:</span><span id="span20">
+                  <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                  <input  type="text" class="baseinput" id="salary" name="salary">
+                  <br/><font id="salaryprompt" class="prompt"></font>
+              </td>
+            </tr>
+            <tr class="heighttd">
+              <td class="basetd">
+                  <span>工作经验:</span><span id="span21">
+                  <font class="emptyfont">&nbsp;</font></span>
+              </td>
+              <td>
+                  <div class="form-group">
+                <textarea class="form-control" rows="5" id="experience" name="experience"></textarea>
+
+                </div>
+              </td>
+            </tr>
+      </table>
+
+
+    <p class="lead"><h6><b>其他</b></h6></p>
+      <ul class="nav nav-list">
+           <li class="divider"></li>
+      </ul>
+
+  <table id="table4">
+
+   <tr class="heighttd">
+              <td class="basetd">
+                <span>验证码:</span><span id="span22">
+                <font class="xinfont">*</font></span>
+              </td>
+              <td>
+                <input  type="text" id="verify" name="verify"><img src="{:U('Portal/Join/verify',array('time',date()))}" onclick='this.src=this.src+"?"+Math.random()' id="cerifyimg">
+                <!-- 实现验证码刷新 -->
+              </td>
+            </tr>
+
+      </table>
+   <div align="center" id="divbutton">
+   <button type="button" class="btn btn-default" style="margin-right: 50px;" id="submit_button"  data-toggle="modal" data-target="#myModal">提交</button>
+   <button type="button" class="btn btn-default" onclick="window.history.go(-1);">取消</button>
+
+      </div>
+
+  </form>
+
+
+  <tc_include file="Public:footer"/>
+      </div>
+
+
+  <literal>
+  <script type="text/javascript">
+  (function($){$.extend({ms_DatePicker:function(options){var defaults={YearSelector:"#sel_year",MonthSelector:"#sel_month",DaySelector:"#sel_day",FirstText:"--",FirstValue:0};var opts=$.extend({},defaults,options);var $YearSelector=$(opts.YearSelector);var $MonthSelector=$(opts.MonthSelector);var $DaySelector=$(opts.DaySelector);var FirstText=opts.FirstText;var FirstValue=opts.FirstValue;var str="<option value=\""+FirstValue+"\">"+FirstText+"</option>";$YearSelector.html(str);$MonthSelector.html(str);$DaySelector.html(str);var yearNow=new Date().getFullYear();var yearSel=$YearSelector.attr("rel");for(var i=yearNow;i>=1950;i--){var sed=yearSel==i?"selected":"";var yearStr="<option value=\""+i+"\" "+sed+">"+i+"</option>";$YearSelector.append(yearStr);}
+  var monthSel=$MonthSelector.attr("rel");for(var i=1;i<=12;i++){var sed=monthSel==i?"selected":"";var monthStr="<option value=\""+i+"\" "+sed+">"+i+"</option>";$MonthSelector.append(monthStr);}
+  function BuildDay(){if($YearSelector.val()==0||$MonthSelector.val()==0){$DaySelector.html(str);}else{$DaySelector.html(str);var year=parseInt($YearSelector.val());var month=parseInt($MonthSelector.val());var dayCount=0;switch(month){case 1:case 3:case 5:case 7:case 8:case 10:case 12:dayCount=31;break;case 4:case 6:case 9:case 11:dayCount=30;break;case 2:dayCount=28;if((year%4==0)&&(year%100!=0)||(year%400==0)){dayCount=29;}
+  break;default:break;}
+  var daySel=$DaySelector.attr("rel");for(var i=1;i<=dayCount;i++){var sed=daySel==i?"selected":"";var dayStr="<option value=\""+i+"\" "+sed+">"+i+"</option>";$DaySelector.append(dayStr);}}}
+  $MonthSelector.change(function(){BuildDay();});$YearSelector.change(function(){BuildDay();});if($DaySelector.attr("rel")!=""){BuildDay();}}});})(jQuery);var is={ie:navigator.appName=='Microsoft Internet Explorer',java:navigator.javaEnabled(),ns:navigator.appName=='Netscape',ua:navigator.userAgent.toLowerCase(),version:parseFloat(navigator.appVersion.substr(21))||parseFloat(navigator.appVersion),win:navigator.platform=='Win32'}
+  is.mac=is.ua.indexOf('mac')>=0;if(is.ua.indexOf('opera')>=0){is.ie=is.ns=false;is.opera=true;}
+  if(is.ua.indexOf('gecko')>=0){is.ie=is.ns=false;is.gecko=true;}
+  </script>
+  </literal>
+
+
+  <script>
+  $(function () {
+    $.ms_DatePicker({
+              YearSelector: ".sel_year",
+              MonthSelector: ".sel_month",
+              DaySelector: ".sel_day"
+      });
+    $.ms_DatePicker();
+  });
+  </script>
+
+<!-- 表单验证代码 -->
+<script type="text/javascript">
+$(function(){
+                var name_flag = false;
+                var sex_flag = false;
+                var sel_year_flag = false;
+                var sel_month_flag = false;
+                var sel_day_flag = false;
+                var cellphone_flag = false;
+                var email_flag = false;
+                var education_flag = false;
+                var professional_flag = false;
+                var workingyear_flag = false;
+          //姓名判断
+          $('#name').blur(function(){
+                        //姓名检测
+                          $('#nameprompt').empty();
+                      if($(this).val().length < 2 && $(this).val().length>0){
+                        $('#nameprompt').append('姓名不能少于2个字符!');
+                      }else if ($(this).val().length >12) {
+                        $('#nameprompt').append('姓名不能大于12个字符!');
+                      }else if($(this).val()==''){
+                        $('#nameprompt').append('姓名不能为空!');
+                    }else{
+                      name_flag = true;
+                    }
+          });
+
+          //性别自身判断
+            $('#sex').blur(function(){
+                  //性别判断
+                  if($(this).find("option:selected").text()=='请选择:'){
+                      $('#sexprompt').empty();
+                       $('#sexprompt').append('请选择您的性别!');
+                    }else{
+                      $('#sexprompt').empty();
+                      sex_flag = true;
+                    };
+                    //姓名判断
+                      $('#nameprompt').empty();
+                      if($('#name').val().length < 2 && $('#name').val().length>0){
+                        $('#nameprompt').append('姓名不能少于2个字符!');
+                      }else if ($('#name').val().length >12) {
+                        $('#nameprompt').append('姓名不能大于12个字符!');
+                      }else if($('#name').val()==''){
+                        $('#nameprompt').append('姓名不能为空!');
+                    }
+            });
+
+          //年份判断
+        $('#sel_year').blur(function(){
+                    //性别判断
+                    if($('#sex').find("option:selected").text()=='请选择:'){
+                      $('#sexprompt').empty();
+                       $('#sexprompt').append('请选择您的性别!');
+                    }else{
+                      $('#sexprompt').empty();
+                  }
+                    //自身改变
+                     if($(this).blur("option:selected").text()=='--'){
+                      $('#sel_yearprompt').empty();
+                       $('#sel_yearprompt').append('请选择您的出生年份!');
+                    }else{
+                      $('#sel_yearprompt').empty();
+                      sel_year_flag = true;
+                    };
+        });
+
+      //月份判断sel_yearprompt
+      $('#sel_month').blur(function(){
+                  //年份判断
+                  if($('#sel_year').find("option:selected").text()=='--'){
+                      $('#sel_yearprompt').empty();
+                       $('#sel_yearprompt').append('请选择您的出生年份!');
+                    }else{
+                      $('#sel_yearprompt').empty();
+                    };
+                  //自身判断
+                   if($(this).blur("option:selected").text()=='--'){
+                      $('#sel_monthprompt').empty();
+                       $('#sel_monthprompt').append('请选择您的出生月份!');
+                    }else{
+                      $('#sel_monthprompt').empty();
+                      sel_month_flag = true;
+                    };
+      });
+
+      //日期判断sel_day
+      $('#sel_day').blur(function(){
+                  //月份判断
+                  if($('#sel_month').find("option:selected").text()=='--'){
+                      $('#sel_monthprompt').empty();
+                       $('#sel_monthprompt').append('请选择您的出生月份!');
+                    }else{
+                      $('#sel_monthprompt').empty();
+                    };
+                  //自身判断
+                   if($(this).blur("option:selected").text()=='--'){
+                      $('#sel_monthprompt').empty();
+                       $('#sel_monthprompt').append('请选择您的出生日期!');
+                    }else{
+                      $('#sel_monthprompt').empty();
+                      sel_day_flag = true;
+                    };
+      });
+
+      //手机判断
+       $('#cellphone').blur(function(){
+                    if($(this).val().search(/^1[3|4|5|7|8]\d{9}$/)==-1){
+                        $('#cellphoneprompt').empty();
+                        $('#cellphoneprompt').append('请输入正确的手机号码格式');
+                    }else{
+                        $('#cellphoneprompt').empty();
+                        cellphone_flag = true;
+                    }
+     });
+      //邮箱判断
+      $('#email').blur(function(){
+              //邮箱判断
+                 if (/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test($(this).val()) == false) {
+                        $('#emailprompt').empty();
+                        $('#emailprompt').append('请输入正确的邮箱格式!');
+                    }else{
+                        $('#emailprompt').empty();
+                        email_flag=true;
+                    }
+              //手机判断
+               if($('#cellphone').val().search(/^1[3|4|5|7|8]\d{9}$/)==-1){
+                        $('#cellphoneprompt').empty();
+                        $('#cellphoneprompt').append('请输入正确的手机号码格式');
+                    }else{
+                        $('#cellphoneprompt').empty();
+                    }
+      });
+
+      //学历判断
+            $('#education').blur(function(){
+                  //自身判断
+                  if($(this).find("option:selected").text()=='请选择:'){
+                      $('#educationprompt').empty();
+                       $('#educationprompt').append('请选择您的学历!');
+                    }else{
+                      $('#educationprompt').empty();
+                      education_flag = true;
+                    };
+                    //邮箱判断
+                       if (/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test($('#email').val()) == false) {
+                        $('#emailprompt').empty();
+                        $('#emailprompt').append('请输入正确的邮箱格式!');
+                    }else{
+                        $('#emailprompt').empty();
+                    }
+            });
+
+          //专业判断
+        $('#professional').blur(function(){
+                    //学历判断
+                    if($('#education').find("option:selected").text()=='请选择:'){
+                      $('#educationprompt').empty();
+                       $('#educationprompt').append('请选择您的学历!');
+                    }else{
+                      $('#educationprompt').empty();
+                    };
+                    //自身改变
+                     $('#professionalprompt').empty();
+                      if($(this).val().length < 2 && $(this).val().length>0){
+                        $('#professionalprompt').append('专业不能少于2个字符!');
+                      }else if ($(this).val().length >12) {
+                        $('#professionalprompt').append('专业不能大于12个字符!');
+                      }else if($(this).val()==''){
+                        $('#professionalprompt').append('专业不能为空!');
+                    }else{
+                      professional_flag = true;
+                    }
+        });
+
+      //工作年限
+       $('#workingyear').blur(function(){
+                  //自身判断
+                  if($(this).find("option:selected").text()=='请选择:'){
+                      $('#workingyearprompt').empty();
+                       $('#workingyearprompt').append('请选择您的学历!');
+                    }else{
+                      $('#workingyearprompt').empty();
+                      workingyear_flag = true;
+                    };
+                    //专业判断
+                     $('#professionalprompt').empty();
+                      if($('#profession').val().length < 2 && $('#profession').val().length>0){
+                        $('#professionalprompt').append('专业不能少于2个字符!');
+                      }else if ($('#profession').val().length >12) {
+                        $('#professionalprompt').append('专业不能大于12个字符!');
+                      }else if($('#profession').val()==''){
+                        $('#professionalprompt').append('专业不能为空!');
+                    }
+            });
+
+
+
+      // 后台进行
+
+      //提交验证
+       $('#submit_button').click(function(){
+                    if(name_flag && sex_flag && sel_year_flag && sel_month_flag && sel_day_flag && cellphone_flag && email_flag && education_flag && professional_flag && workingyear_flag){
+                        $('#applyForm').submit();
+                           $(':input','#applyForm')
+                .not(':button, :submit, :reset')
+                .val('')
+                .removeAttr('checked')
+                .removeAttr('selected');
+                    }else{
+
+                      $('#identifier').modal(options);
+                // window.location.reload();//刷新当前页面
+                  $(':input','#applyForm')
+                .not(':button, :submit, :reset')
+                .val('')
+                .removeAttr('checked')
+                .removeAttr('selected');
+                        return false;
+                    }
+                });
+
+});
+</script>
+
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position: relative;top:-500px;left:50%;width: 600px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body"><font color="red">您未按要求填写表单，申请失败，请重新填写！</font></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+ -->

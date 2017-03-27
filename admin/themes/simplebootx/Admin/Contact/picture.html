@@ -1,0 +1,21 @@
+         <div>
+
+            <form action="__URL__/pircture" enctype="multipart/form-data" method="post" >
+
+        <div class="form-group" id="adduploaddiv">
+            <span><b>图片：</b></span>
+          <input id="uploadFile1" placeholder="请选择上传文件" disabled="disabled"/>
+      <div class="fileUpload btn btn-primary">
+          <span>上传</span>
+          <input id="uploadBtn1" type="file" class="upload" name='pircture[]' />
+        </div>
+        </div>
+
+     </form>
+   <button type="submit" class="btn btn-default btn-lg">添加</button>
+   </div>
+
+
+<script type="text/javascript">
+document.getElementById("uploadBtn1").onchange=function(){document.getElementById("uploadFile1").value=this.value};
+</script>

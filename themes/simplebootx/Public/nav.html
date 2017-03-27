@@ -1,0 +1,59 @@
+<!-- 标题栏 -->
+{:hook('body_start')}
+<div class="navbar navbar-fixed-top">
+   <div class="navbar-inner">
+     <div class="container">
+       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </a>
+       <!-- 侧边栏logo -->
+       <a class="brand" href="__ROOT__/"><img src="__TMPL__Public/assets/images/logo.png"/></a>
+
+            <!-- 前台导航 -->
+ <div class="container">
+
+                    <ul id="main-menu" class="nav">
+                        <li class="li-class">
+                        <a href="{:U('Portal/Index/index')}">首页</a>
+                        </li>
+                        <li class="li-class">
+                        <a href="{:U('Portal/About/index')}">关于我们</a>
+                        </li>
+                        <li class="dropdown li-class">
+                        <a href="http://localhost/one/Product"  class="dropdown-toggle" data-toggle="dropdown">产品中心 <b class="caret"></b></a>
+                                <ul class="dropdown-menu" style="padding: 0;margin: 0;border: 0;">
+                                <li class="li-class">
+                                <a href="{:U('Portal/list/index',array('id'=>11))}">硬件</a>
+                                </li>
+                                <li class="li-class">
+                                <a href="{:U('Portal/list/index',array('id'=>10))}">软件</a>
+                                </li>
+                                </ul>
+                          </li>
+                        <li class="li-class">
+                        <a href="{:U('Portal/list/index?id=1')}">解决方案</a></li>
+                        <li class="li-class">
+                        <a href="{:U('Portal/list/index',array('id'=>4))}">成功案例</a>
+                        </li>
+                        <li class="li-class">
+                        <a href="{:U('Portal/Join/index')}">加入我们</a>
+                        </li>
+                        <li class="li-class">
+                        <a href="{:U('Portal/Contact/index')}">联系我们</a>
+                        </li>
+                    </ul>
+   </div>
+   <!-- 前台导航 -->
+
+
+   </div>
+ </div>
+</div>
+<style>
+  .big{
+    height:350px;
+   width:1920px;
+  }
+</style>

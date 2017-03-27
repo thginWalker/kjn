@@ -1,0 +1,193 @@
+<!-- 关于我们 -->
+<!DOCTYPE html>
+<html><style type="text/css" id="259270874195"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+
+           <link rel="stylesheet" type="text/css" href="__TMPL__Public/about/css/inner.css">
+           <link rel="stylesheet" type="text/css" href="__TMPL__Public/about/css/hover-effects.css">
+    <tc_include file="Public:head" />
+</head>
+<body>
+<tc_include file="Public:nav" />
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/about/css/basic.css">
+
+<script type="text/javascript">document.getElementById("menu2").className="a1";</script>
+<!-- 大图 -->
+<div style="height: 60px"></div>
+<div >
+  <img src="__PUBLIC__/images/1.jpg" alt="康吉诺(北京)科技有限公司"  class="big" >
+</div>
+<div class="container">
+
+<div class="content">
+<!-- 公司简介 -->
+  <div class="general">
+    <div class="general_con">
+      <div class="general_title">
+        <table width="400" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+
+            <td>康吉诺(北京)科技有限公司</td>
+
+          </tr>
+        </tbody></table>
+      </div>
+      <div class="box_parent" id="box_parentab">
+        <div class="box1  box-l J_Box" init="true" id='gsjjt'><img src="__TMPL__Public/about/img/Join01.jpg" width="660px" height="400px"></div>
+        <div class="general_con_c_ri  box-r J_Box" init="true" id="gsjjw">
+          <div class="what">公司简介</div>
+           <div class="general_con_c_ri_word" id="gsjjs">{$gsjj[0][about_content]}</div>
+
+        </div>
+        <div class="clear"></div>
+      </div>
+      </div>
+   </div>
+<!--    公司荣誉 -->
+<div class="general2">
+      <div class="general_con">
+        <div class="general_con_c">
+          <div class="general_title">
+            <table width="400" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+
+                <td>公司荣誉</td>
+
+              </tr>
+            </tbody></table>
+          </div>
+          <table  width="400" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<php>$t=0</php>
+<foreach name="gsry" item="vo" >
+<td><div class="tv_hot fl" >
+                    <font class="avatar" target="_blank" title="康吉诺(北京)科技有限公司">
+                    <img width="280" height="205" src="__TMPL__Public/about/img/{$vo.about_address}" alt="康吉诺(北京)科技有限公司">
+                    </font>
+            </div></td>
+<php>
+  $t++;
+  if($t%3==0){
+      echo "</tr>";
+      echo "<tr>";
+  }
+</php>
+</foreach>
+
+</table>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+<!-- 资质认证 -->
+    <div class="general">
+      <div class="general_con">
+        <div class="general_title">
+          <table width="400" border="0" cellspacing="0" cellpadding="0">
+            <tbody><tr>
+              <td>资质认证</td>
+            </tr>
+          </tbody></table>
+        </div>
+<table align="center">
+  <tr>
+  <php>
+    $m=0;
+  </php>
+    <foreach name="zzrz" item="vo" >
+    <td>
+      <div class="qcontainer">
+    <div class="film">
+      <div class="face front"><img class="zz" src="__TMPL__Public/about/img/{$vo.about_address}" ></div>
+      <div class="face back"><img class="zz" src="__TMPL__Public/about/img/{$vo.about_address}"></div>
+    </div>
+  </div>
+    </td>
+    <php>
+      $m++;
+      if($m%4==0){
+      echo "</tr>";
+      echo "<tr>";
+      }
+    </php>
+</foreach>
+
+</table>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+<!-- 合作伙伴 -->
+    <div class="general2">
+      <div class="general_con">
+        <div class="general_con_c">
+          <div class="general_title">
+            <table width="400" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+
+                <td>合作伙伴</td>
+
+              </tr>
+            </tbody></table>
+          </div>
+         <table width="400" border="0" align="center">
+          <tr>
+          <php>$i=0;</php>
+  <foreach name="data" item="vo" >
+            <td>
+
+
+
+        <div class="port-6 effect-3" id="hhhh">
+          <div class="image-box">
+            <img src="__TMPL__Public/about/img/{$vo.about_address}" alt="" width="3460" height="2500">
+          </div>
+          <div class="text-desc">
+            <h3>{$vo.about_title}</h3>
+            <p>{$vo.about_content}</p>
+          </div>
+        </div>
+
+            <!-- <div class="bd view view-first">
+                      <img width="190" height="190" src="__TMPL__Public/about/img/{$vo.about_address}">
+                  <div class="mask">
+                              <h4 class="title">{$vo.about_title}</h4>
+                              <p class="text">{$vo.about_content}</p>
+
+                 </div>
+          </div> -->
+
+</td>
+  <php>
+            $i++;
+            if($i%5==0){
+            echo "</tr>";
+            echo "<tr>";
+            }
+          </php>
+</foreach>
+        </table>
+        </div>
+      </div>
+    </div>
+
+
+
+<tc_include file="Public:footer"/>
+<div id="top"></div>
+
+<script src="__TMPL__Public/assets/js/slippry.min.js"></script>
+<tc_include file="Public:scripts" />
+
+</body></html>

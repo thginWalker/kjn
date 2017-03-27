@@ -1,0 +1,147 @@
+
+
+<include file="Public:base" />
+
+      <link href="__TMPL__Public/qindex/css/index.css" rel="stylesheet">
+
+<style type="text/css">
+#ios{
+position: relative;
+top: 0;
+left: 20px;
+}
+#picturemargin{
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.col-sm-8{
+margin-left: -100px;
+}
+.col-sm-2{
+  margin-top: 5px;
+}
+</style>
+<!--  -->
+
+</head>
+<body>
+
+<div id="main">
+      <ul id="myTab" class="nav nav-tabs">
+         <li  class="active"><a href="#ios" data-toggle="tab">公司管理</a></li>
+          <li><a href="#home" data-toggle="tab">
+            右侧大图</a></li>
+                    <li><a href="#touch" data-toggle="tab">
+            弹窗</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+         <div class="tab-pane fade in active" id="ios">
+            <p>
+<div>
+<div align="center"><h3>分公司</h3></div>
+<br/>
+ <a class='btn btn-default btn-lg' href="{:U('Admin/Contact/addf')}">添加</a>
+<br/><br/>
+<table class="table table-bordered">
+<thead>
+      <tr class="info">
+        <th  class="baseth">图片</th>
+        <th  class="baseth">名称</th>
+        <th  class="baseth">地址</th>
+        <th  class="baseth">邮编</th>
+        <th  class="baseth">电话</th>
+        <th  class="baseth">传真</th>
+        <th  class="baseth">邮箱</th>
+        <th  class="baseth">操作</th>
+      </tr>
+</thead>
+<tbody>
+<foreach name="name" item="vo" >
+   <tr>
+       <td class="basetd">
+       <img src=".\themes\simplebootx\Public\Contact\img\{$vo.contact_pircture}" width="140" height="140">
+       </td>
+          <td>{$vo.contact_title}</td>
+        <td>{$vo.contact_address}</td>
+       <td>{$vo.contact_postcode}</td>
+        <td>{$vo.contact_phone}</td>
+        <td>{$vo.contact_fax}</td>
+        <td>{$vo.contact_email}</td>
+       <td class="basetd" width="120" ><a href="{:U('Admin/Contact/edit',array('id'=>$vo['id']))}">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  href="{:U('Admin/Contact/deleat',array('id'=>$vo['id']))}">删除</a></td>
+     </tr>
+</foreach>
+</tbody>
+</table>
+          </div>
+</p>
+         </div>
+         <div class="tab-pane fade" id="home">
+
+<br/>
+         <div id="picturemargin">
+
+            <form action="__URL__/pircture" enctype="multipart/form-data" method="post" >
+
+        <div class="form-group" id="adduploaddiv">
+            <span><b>图片：</b></span>
+          <input id="uploadFile1" placeholder="请选择上传文件" disabled="disabled"/>
+      <div class="fileUpload btn btn-primary">
+          <span>上传</span>
+          <input id="uploadBtn1" type="file" class="upload" name='pircture[]' />
+        </div>
+        </div>
+  <button type="submit" class="btn btn-default btn-lg" style="margin-left: 50px;">完成</button>&nbsp;&nbsp;
+  <button type="button" class="btn btn-default btn-lg" onclick="window.history.go(-1);">取消</button>
+     </form>
+
+   </div>
+
+         </div>
+       <div class="tab-pane fade" id="touch">
+
+<br/>
+         <div id="picturemargin">
+
+            <form action="__URL__/touch" enctype="multipart/form-data" method="post" >
+
+
+           <div class="form-group">
+          <label for="addinput2" class="col-sm-2 control-label">QQ：</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="addinput2" name="qq">
+          </div>
+        </div>
+        <br/><br/>
+        <div class="form-group">
+          <label for="addinput3" class="col-sm-2 control-label">电话：</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="addinput3" name="phone">
+          </div>
+        </div>
+      <br/><br/>
+
+
+  <button type="submit" class="btn btn-default btn-lg" style="margin-left: 50px;">完成</button>&nbsp;&nbsp;
+  <button type="button" class="btn btn-default btn-lg" onclick="window.history.go(-1);">取消</button>
+     </form>
+
+   </div>
+
+         </div>
+      </div>
+</div>
+<script>
+   $(function(){
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      var activeTab = $(e.target).text();
+      var previousTab = $(e.relatedTarget).text();
+      $(".active-tab span").html(activeTab);
+      $(".previous-tab span").html(previousTab);
+   });
+});
+</script>
+
+<script type="text/javascript">
+document.getElementById("uploadBtn1").onchange=function(){document.getElementById("uploadFile1").value=this.value};
+</script>
+

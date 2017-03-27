@@ -1,0 +1,49 @@
+
+
+<meta name="keywords" content="{$seo_keywords}" />
+<meta name="description" content="{$seo_description}">
+<tc_include file="Public:head" />
+
+    <link href="__TMPL__Public/article/css/article.css" rel="stylesheet">
+
+
+    <tc_include file="Public:nav" />
+<img src="__PUBLIC__/images/1.jpg" alt=""   style="width:1920px;height:350px">
+    <div class="container">
+    <br/>
+        <h2 align="center">软件</h2>
+        <hr>
+       <div id='main'>
+    <div id="divimg" align="center">
+    <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" alt="{$post_title}" height="450px" >
+    </div>
+    <div id='divtable'>
+<!-- 测试 -->
+     <table class="table table-hover table-bordered table-striped" width="400px" id="join-table">
+
+                        <tr>
+                            <td class="basetd basewidth">名称：</td>
+                            <td class="basetd">{$post_title}</td>
+                        </tr>
+                          <tr>
+                            <td class="basetd basewidth">规格：</td>
+                            <td class="basetd">{$post_excerpt}</td>
+                        </tr>
+                          <tr>
+                            <td class="importtd basewidth">详细信息：</td>
+                            <td class="importtd">{$post_content}</td>
+                        </tr>
+        </table>
+<!-- 测试 -->
+
+    </div>
+</div>
+
+        </div>
+        <div id="nextpage"></div>
+
+        <tc_include file="Public:footer" />
+	<tc_include file="Public:scripts"/>
+    </div>
+</body>
+</html>

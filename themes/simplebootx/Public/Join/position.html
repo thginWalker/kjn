@@ -1,0 +1,92 @@
+
+
+<tc_include file="Public:head" />
+<body class="body-white">
+    <tc_include file="Public:nav" />
+
+    <tc_include file="Public:scripts"/>
+    <script src="__TMPL__Public/assets/js/slippry.min.js"></script>
+    <script src="__TMPL__Public/assets/js/jquery-3.1.1.min.js"></script>
+<img src="__TMPL__Public/join/img/main.jpg"  style="width:1920px;height:350px">
+    <div align="center" style="margin-top: 30px"><h3>职位详情</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+      <link href="__TMPL__Public/join/css/position.css" rel="stylesheet">
+<div style="width: 1000px;height: 460px;margin: 20px auto;">
+    <div class="table-responsive">
+        <table class="table table-bordered" width="1200px" id="join-table">
+          <tbody>
+                <tr>
+                    <td class="category active" style="text-align: right;" >职位类型：</td>
+                    <td>{$position.position_type}</td>
+                    <td class="category active" style="text-align: right;">职位名称：</td>
+                    <td>{$title}</td>
+                </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">招聘人数：</td>
+                    <td>{$position.position_number}</td>
+                    <td class="category active" style="text-align: right;">性别：</td>
+                    <td>{$position.position_sex}
+                         <switch name="position.position_sex">
+                            <case value="2">不限</case>
+                            <case value="0">女</case>
+                            <case value="1">男</case>
+                            <default />性别</switch>
+                </td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">工作性质：</td>
+                    <td>{$position.position_nature}</td>
+                    <td class="category active" style="text-align: right;">薪水范围：</td>
+                    <td>{$position.position_salary}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">学历要求：</td>
+                    <td>{$position.position_education}</td>
+                    <td class="category active" style="text-align: right;">工作地区：</td>
+                    <td>{$position.position_district}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">工作部门：</td>
+                    <td>{$position.position_section}</td>
+                    <td class="category active" style="text-align: right;">工作年限：</td>
+                    <td>{$position.position_year}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">年龄要求：</td>
+                    <td>{$position.position_age}</td>
+                    <td class="category active" style="text-align: right;">职位标记：</td>
+                    <td>{$position.position_tag}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">发布日期：</td>
+                    <td>{$position.position_release}</td>
+                    <td class="category active" style="text-align: right;">截止日期：</td>
+                    <td>{$position.position_abort}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">职位描述：</td>
+                    <td colspan="3">{$position.position_describe}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">能力要求：</td>
+                    <td colspan="3">{$position.position_require}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active" style="text-align: right;">其他说明：</td>
+                    <td colspan="3">{$position.position_other}</td>
+                 </tr>
+
+          </tbody>
+        </table>
+    </div>
+    <div align="center">
+          <a class="btn btn-default" href="{:U('Portal/Join/apply',array('name'=>$title))}" role="button" style="margin-right: 50px;">立刻申请该职位</a>
+          <a class="btn btn-default" href="{:U('Portal/Join/index')}" role="button">返回</a>
+    </div>
+<tc_include file="Public:footer"/>
+    </div>

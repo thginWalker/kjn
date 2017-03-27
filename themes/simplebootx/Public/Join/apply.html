@@ -1,0 +1,130 @@
+<!-- 将Pure添加到项目 -->
+<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+
+<tc_include file="Public:head" />
+<body class="body-white">
+    <tc_include file="Public:nav" />
+
+    <tc_include file="Public:scripts"/>
+    <script src="__TMPL__Public/assets/js/slippry.min.js"></script>
+    <script src="__TMPL__Public/assets/js/jquery-3.1.1.min.js"></script>
+<img src="__TMPL__Public/join/img/main.jpg"  style="width:1920px;height:350px">
+    <div align="center" style="margin-top: 30px"><h3>申请职位</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+      <link href="__TMPL__Public/join/css/apply.css" rel="stylesheet">
+<div style="width: 900px;margin: 20px auto;">
+<div class="alert alert-success"><b>您要申请的职位:</b> {$name}</div>
+<p class="lead"><h6><b>个人基本信息</b></h6></p>
+    <ul class="nav nav-list">
+         <li class="divider"></li>
+    </ul>
+
+
+<form class="pure-form pure-form-stacked">
+    <fieldset>
+        <label for="text" >姓名:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >年龄:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="state">性别:</label>
+        <select id="state" style="height: 35px;">
+            <option selected="selected">请选择:</option>
+            <option>男</option>
+            <option>女</option>
+        </select><br/>
+        <label for="text" >出生日期:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >通讯地址:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >联系电话:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >手机:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >QQ:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >邮箱:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text">婚姻状况:</label>
+        <select  style="height: 35px;">
+            <option selected="selected">请选择:</option>
+            <option>未婚:</option>
+            <option>已婚:</option>
+        </select><br/>
+        <label for="text" >身高:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;">cm<br/>
+        <label for="text" >户口所在地:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >籍贯:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >证件类型:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+         <div class="form-group">
+        <label for="exampleInputFile">个人照片:</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">请选择您的照片</p>
+        </div>
+        <p class="lead"><h6><b>教育背景</b></h6></p>
+    <ul class="nav nav-list">
+         <li class="divider"></li>
+    </ul>
+        <label for="text">学历:</label>
+        <select  style="height: 35px;">
+            <option selected="selected">请选择:</option>
+            <option>中专及以上</option>
+            <option>高中</option>
+            <option>专科</option>
+            <option>本科</option>
+            <option>硕士</option>
+            <option>博士及以上</option>
+        </select><br/><br/>
+      <label for="text" >专业:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+        <label for="text" >毕业院校:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/><br/>
+        <label for="remember" class="pure-checkbox">
+        <p class="lead"><h6><b>工作经历</b></h6></p>
+    <ul class="nav nav-list">
+         <li class="divider"></li>
+    </ul>
+    <label for="text">工作年限:</label>
+        <select  style="height: 35px;">
+            <option selected="selected">请选择:</option>
+            <option>应届毕业生</option>
+            <option>在校大学生</option>
+            <option>1年以上</option>
+            <option>2年以上</option>
+            <option>3年以上</option>
+            <option>5年以上</option>
+            <option>8年以上</option>
+            <option>10年以上</option>
+        </select><br/><br/>
+        <label for="text">工作性质:</label>
+        <select  style="height: 35px;">
+            <option selected="selected">请选择:</option>
+            <option>全职</option>
+            <option>兼职</option>
+            <option>临时</option>
+            <option>不限</option>
+        </select><br/><br/>
+        <label for="text" >期望月薪:</label>
+        <input  type="text" placeholder="text" style="height: 35px;width:400px;display: block;"><br/>
+            <input id="remember" type="checkbox"> Remember me
+
+        </label>
+
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+
+</form>
+
+
+</div>
+<tc_include file="Public:footer"/>
+    </div>
+

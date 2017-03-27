@@ -1,0 +1,117 @@
+
+    <tc_include file="Public:head" />
+
+<tc_include file="Public:nav" />
+<div>
+	<img src="__PUBLIC__/images/3.jpg" alt="康吉诺(北京)科技有限公司" class="big">
+</div>
+
+<div class="container tc-main">
+<div id="top"></div>
+    <h2 align="center">解决方案</h2>
+    <hr>
+   	<table>
+   		<tr>
+   			<td>
+   			<div class="span9">
+			<div class="">
+				<php>
+					$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",10);
+				</php>
+				<volist name="lists['posts']" id="vo">
+				<php>
+					$smeta=json_decode($vo['smeta'], true);
+				</php>
+
+				<div class="list-boxes">
+					<h2 ><a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h2>
+					<p>{$vo.post_excerpt|msubstr=0,256}</p>
+					<div>
+						<div class="pull-left">
+							<div class="list-actions">
+							<a href="javascript:;"><i class="fa fa-eye"></i><span>{$vo.post_hits}</span></a>
+
+							</div>
+						</div>
+						<a class="btn  pull-right" id="lookmore" href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">查看更多</a>
+					</div>
+				</div>
+				</volist>
+
+			</div>
+			<div class="pagination"><ul>{$lists['page']}</ul></div>
+		</div>
+
+   			</td>
+   			<td>
+   				<div class="span3">
+
+
+        	<div class="tc-box">
+	        	<div class="headtitle">
+	        		<h2 class="hotnew" >热门方案</h2>
+	        	</div>
+	        	<div class="ranking">
+	        		<php>
+						$hot_articles=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,object_id,term_id,smeta;order:post_hits desc;limit:5;");
+					</php>
+		        	<ul class="unstyled">
+		        		<foreach name="hot_articles" item="vo">
+		        			<php>$top=$key<3?"top3":"";</php>
+							<li class="{$top}"><i>{$key+1}</i><a title="{$vo.post_title}" href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></li>
+						</foreach>
+					</ul>
+				</div>
+			</div>
+
+
+
+
+			<div class="tc-box">
+	        	<div class="headtitle">
+	        		<h2 class="hotnew">最新方案</h2>
+	        	</div>
+	        	<php>
+					$last_post=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,object_id,term_id,smeta;order:listorder asc;limit:4;");
+				</php>
+	        	<div class="posts">
+	        		<foreach name="last_post" item="vo">
+	        		<php>$smeta=json_decode($vo['smeta'],true);</php>
+			        	<dl class="dl-horizontal">
+				            <dt>
+					            <a class="img-wraper" href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">
+					            	<if condition="empty($smeta['thumb'])">
+										<img src="__TMPL__Public/assets/images/default_tupian4.png" class="img-responsive" alt="{$vo.post_title}"/>
+									<else />
+										<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
+									</if>
+					            </a>
+				            </dt>
+				            <dd><a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></dd>
+				        </dl>
+			        </foreach>
+		        </div>
+			</div>
+
+			<php>$ad=sp_getad("portal_list_right_aside");</php>
+			<if condition="!empty($ad)">
+
+			</if>
+		</div>
+   			</td>
+   		</tr>
+   	</table>
+    <div class="row">
+
+
+    </div>
+
+
+    <tc_include file="Public:footer" />
+</div>
+
+
+<!-- JavaScript -->
+<tc_include file="Public:scripts" />
+</body>
+</html>

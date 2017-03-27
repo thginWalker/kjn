@@ -1,0 +1,74 @@
+
+
+    <div align="center" id="editdivalign"><h3>申请列表</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+      <link href="__TMPL__Public/join/css/join.css" rel="stylesheet">
+<div id="editmain">
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped" width="800px" id="join-table">
+          <thead>
+            <tr class="info">
+                        <th>申请职位</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                      <th>出生日期</th>
+                        <th>手机</th>
+                        <th>邮箱</th>
+                         <th>学历</th>
+                        <th>专业</th>
+                        <th>工作年限</th>
+                        <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          <volist name="data" id="vo">
+                        <tr>
+                            <td>{$vo.apply_position}</td>
+                            <td>{$vo.apply_name}</td>
+                            <td>
+                            <switch name="vo.apply_sex" >
+                            <case value="0">女</case>
+                            <case value="1">男</case>
+                            <default />性别</switch>
+                            </td>
+                            <td>{$vo.apply_birthday}</td>
+                            <td>{$vo.apply_cellphone}</td>
+                            <td>{$vo.apply_mailbox}</td>
+                           <td>
+                            <switch name="vo.apply_education" >
+                            <case value="0">中专及以上</case>
+                            <case value="1">高中</case>
+                            <case value="2">专科</case>
+                            <case value="3">本科</case>
+                            <case value="4">硕士</case>
+                            <case value="5">博士及以上</case>
+                            <default />学历要求</switch>
+                            </td>
+                            <td>{$vo.apply_professional}</td>
+                            <td>
+                            <switch name="vo.apply_workingyear" >
+                            <case value="0">应届毕业生</case>
+                            <case value="1">在校大学生</case>
+                            <case value="2">1年以上</case>
+                            <case value="3">2年以上</case>
+                            <case value="4">3年以上</case>
+                            <case value="5">5年以上</case>
+                            <case value="6">8年以上</case>
+                            <case value="7">10年以上</case>
+                            <default />工作年限</switch>
+                            </td>
+                            <td><a href="{:U('Admin/Position/applydetails',array('id'=>$vo['id']))}">详情</a> &nbsp;| &nbsp;<a href="{:U('Admin/Position/applydelete',array('id'=>$vo['id']))}">删除</a></td>
+                        </tr>
+        </volist>
+          </tbody>
+        </table>
+    </div>
+
+
+
+    </div>

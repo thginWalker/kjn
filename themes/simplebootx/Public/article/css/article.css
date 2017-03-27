@@ -1,0 +1,27 @@
+#divimg{
+    float:left;
+    width:450px;
+      height: 459px;
+     overflow:hidden;
+    }
+#divtable{
+     float:right;
+     width:450px;
+     height: 459px;
+    }
+ #main{
+     margin: 0 auto;
+      width: 900px
+  }
+.basetd{
+    height : 80px;
+    vertical-align: middle !important;
+}
+.importtd{
+    height: 200px;
+    vertical-align: middle !important;
+}
+.basewidth{
+text-align:right !important;
+width: 100px;
+}

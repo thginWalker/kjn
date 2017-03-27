@@ -1,0 +1,26 @@
+ .category{
+width:188px;
+ }
+.experience{
+    width: 200px;
+    height: 200px;
+}
+#divtitle{
+    margin-top: 30px;
+}
+  #sel_year{
+    width: 70px;
+    height:30px;
+  }
+  #sel_month{
+    width: 70px;
+    height:30px;
+  }
+  #sel_day{
+    width: 70px;
+    height:30px;
+  }
+  #spanselect{
+    position: relative;
+    top: 20px;
+  }

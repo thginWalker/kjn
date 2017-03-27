@@ -1,0 +1,37 @@
+
+<div>
+<div align="center"><h3>合作伙伴</h3></div>
+<br/>
+ <a class='btn btn-default btn-lg' href="{:U('Admin/Contact/addf')}">添加</a>
+<br/><br/>
+<table class="table table-bordered">
+<thead>
+      <tr class="info">
+        <th  class="baseth">图片</th>
+        <th  class="baseth">名称</th>
+        <th  class="baseth">地址</th>
+        <th  class="baseth">邮编</th>
+        <th  class="baseth">电话</th>
+        <th  class="baseth">传真</th>
+        <th  class="baseth">邮箱</th>
+        <th  class="baseth">操作</th>
+      </tr>
+</thead>
+<tbody>
+<foreach name="name" item="vo" >
+   <tr>
+       <td class="basetd">
+       <img src=".\themes\simplebootx\Public\Contact\img\{$vo.contact_pircture}" width="140" height="140">
+       </td>
+          <td>{$vo.contact_title}</td>
+        <td>{$vo.contact_address}</td>
+       <td>{$vo.contact_postcode}</td>
+        <td>{$vo.contact_phone}</td>
+        <td>{$vo.contact_fax}</td>
+        <td>{$vo.contact_email}</td>
+       <td class="basetd" width="120" ><a href="{:U('Admin/Contact/edit',array('id'=>$vo['id']))}">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  href="{:U('Admin/Contact/deleat',array('id'=>$vo['id']))}">删除</a></td>
+     </tr>
+</foreach>
+</tbody>
+</table>
+          </div>

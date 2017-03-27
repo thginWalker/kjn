@@ -1,0 +1,129 @@
+<style type="text/css">
+    .tdalign{
+        text-align: right !important;
+    }
+    #main{
+  width: 1000px;
+  height: 460px;
+  margin: 20px auto;
+    }
+     .category{
+width:188px !important;
+text-align: right !important;
+ }
+</style>
+
+<include file="Public:base" />
+    <div align="center" style="margin-top: 30px"><h3>职位详情</h3></div>
+
+    <ul class="nav nav-list">
+
+         <li class="divider"></li>
+
+    </ul>
+    <!--   X-editable - v1.5.0-->
+<link href="__TMPL__Public/position/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+<script type="text/javascript" src="__TMPL__Public/position/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <!--  X-editable - v1.5.0 -->
+
+<div id="main">
+    <div class="table-responsive">
+        <table class="table table-bordered" width="1200" id="join-table">
+          <tbody>
+          <volist name="positiondetails" id="vo">
+                <tr>
+                    <td class="category active tdalign">职位类型：</td>
+                    <td>{$vo.position_type}</td>
+                    <td class="category active tdalign">职位名称：</td>
+                    <td>{$vo.position_name}</td>
+                </tr>
+                 <tr>
+                    <td class="category active tdalign">招聘人数：</td>
+                    <td>{$vo.position_number}</td>
+                    <td class="category active tdalign">性别：</td>
+                    <td>
+                         <switch name="vo.position_sex">
+                            <case value="2">不限</case>
+                            <case value="0">女</case>
+                            <case value="1">男</case>
+                            <default />性别</switch>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">工作性质：</td>
+                    <td>{$vo.position_nature}</td>
+                    <td class="category active tdalign">薪水范围：</td>
+                    <td>{$vo.position_salary}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">学历要求：</td>
+                    <td>
+                            <switch name="vo.position_education">
+                            <case value="0">中专及以上</case>
+                            <case value="1">高中</case>
+                            <case value="2">专科</case>
+                            <case value="3">本科</case>
+                            <case value="4">硕士</case>
+                            <case value="5">博士及以上</case>
+                            <default />性别</switch>
+                    </td>
+                    <td class="category active tdalign">工作地区：</td>
+                    <td>{$vo.position_district}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">工作部门：</td>
+                    <td>{$vo.position_section}</td>
+                    <td class="category active tdalign">工作年限：</td>
+                    <td>
+                          <switch name="vo.position_year">
+                            <case value="0">应届毕业生</case>
+                            <case value="1">在校大学生</case>
+                            <case value="2">1年以上</case>
+                            <case value="3">2年以上</case>
+                            <case value="4">3年以上</case>
+                            <case value="5">5年以上</case>
+                            <case value="6">8年以上</case>
+                            <case value="7">10年以上</case>
+                            <default />工作年限</switch>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">年龄要求：</td>
+                    <td>{$vo.position_age}</td>
+                    <td class="category active tdalign">职位标记：</td>
+                    <td>{$vo.position_tag}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">发布日期：</td>
+                    <td>{$vo.position_release}</td>
+                    <td class="category active tdalign">截止日期：</td>
+                    <td>{$vo.position_abort}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">职位描述：</td>
+                    <td colspan="3">{$vo.position_describe}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">能力要求：</td>
+                    <td colspan="3">{$vo.position_require}</td>
+                 </tr>
+                 <tr>
+                    <td class="category active tdalign">其他说明：</td>
+                    <td colspan="3">{$vo.position_other}</td>
+                 </tr>
+</volist>
+          </tbody>
+        </table>
+    </div>
+    <div align="center">
+         <button type="button" class="btn btn-default btn-lg" onclick="window.history.go(-1);">返回</button>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('#username').editable();
+}）;
+</script>

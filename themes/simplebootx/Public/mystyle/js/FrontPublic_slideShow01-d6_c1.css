@@ -1,0 +1,109 @@
+@charset "utf-8";
+.fullSlide{
+   position: relative;
+    width: 100%;
+    background: #000;
+    height: 464px;
+    overflow: hidden;
+}
+.fullSlide .bd{
+   z-index: 0;
+    position: relative;
+    margin: 0px auto;
+    height: 464px;
+    overflow: hidden;
+}
+.fullSlide .bd UL{
+   width: 100% !important;
+}
+.fullSlide .bd LI{
+   text-align: center;
+    width: 1920px;
+    height: 464px;
+    left:50%;
+    overflow: hidden;
+    margin-left:-960px;
+    position:absolute;
+}
+.fullSlide .bd LI A{
+   display: block;
+    height: 460px;
+    color:#fff;
+}
+.fullSlide .hd{
+   z-index: 1;
+    position: absolute;
+    line-height: 30px;
+    width:auto;
+    bottom: 15px;
+    height: 13px;
+    left: 48%;
+}
+.fullSlide .hd UL{
+   text-align: center;
+    padding-left: 2%;
+    width: 100%;
+    height: 30px;
+}
+.fullSlide .hd UL LI{
+ margin:0 4px;
+    width: 10px;
+ height: 10px;
+    zoom: 1;
+    display: inline-block;
+   border:2px solid #fff;
+   border-radius:10px;
+   transition:background-color 1000ms ease 0s, margin-top 500ms ease 0s, border-color 1000ms ease 0s;
+    float: left;
+    height: 10px;
+    overflow: hidden;
+    cursor: pointer;
+ 
+}
+.fullSlide .hd UL .on{
+   background: #1366ab;
+     border:2px solid #1366ab;
+}
+.fullSlide .prev{
+   z-index: 1;
+    position: absolute;
+    filter: alpha(opacity=50);
+    margin-top: -30px;
+    width: 40px;
+    display: none;
+    background: url(/images/public/slider-arrow.png) #000 no-repeat -125px 50%;
+    height: 60px;
+    top: 50%;
+    cursor: pointer;
+    left: 0%;
+    opacity: 0.5;
+}
+.fullSlide .next{
+   z-index: 1;
+    position: absolute;
+    filter: alpha(opacity=50);
+    margin-top: -30px;
+    width: 40px;
+    display: none;
+    background: url(/images/public/slider-arrow.png) #000 no-repeat -5px 50%;
+    height: 60px;
+    top: 50%;
+    cursor: pointer;
+    left: 15%;
+    opacity: 0.5;
+}
+.fullSlide .next{
+   right: 0%;
+    left: auto;
+}
+.fullSlide .bd .f_title {
+   bottom:1px;
+   position:absolute;
+   width:100%;
+   height:30px;
+   line-height:30px;
+   text-align:center;
+ 
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}

@@ -1,0 +1,108 @@
+<!-- 首页 -->
+<!DOCTYPE html>
+<!--首页-->
+    <html>
+    <head>
+        <title>康吉诺(北京)科技有限公司</title>
+        <meta name="keywords" content="设备零故障管理平台,设备零故障,零故障,设备管理系统,设备诊断,设备综合诊断,康吉诺(北京)科技有限公司,康吉诺" />
+        <meta name="description" content="康吉诺（北京）科技有限公司是一家大型的技术服务中心,专注于设备综合诊断,设备管理系统,机械设备状态监测的实现,目前已经和国内大型企业建立了良好的合作关系,并且在各大试点进行推广应用">
+
+<!-- 头部 -->
+
+<tc_include file=":function"/>
+    <tc_include file=":config"/>
+    <meta name="author" content="潍坊千行信息科技有限公司">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="icon" href="__TMPL__Public/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="__TMPL__Public/assets/images/favicon.ico" type="image/x-icon">
+    <link href="__TMPL__Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet">
+    <link href="__TMPL__Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href="__TMPL__Public/assets/css/style.css" rel="stylesheet">
+    <style>
+        /*html{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(1);}*/
+        #backtotop{position: fixed;bottom: 50px;right:20px;display: none;cursor: pointer;font-size: 50px;z-index: 9999;}
+        #backtotop:hover{color:#333}
+        #main-menu-user li.user{display: none}
+    </style>
+
+
+<!-- 以下修改 -->
+        <link href="__TMPL__Public/assets/css/slippry/slippry.css" rel="stylesheet">
+        <style>
+            .caption-wraper{position: absolute;left:50%;bottom:2em;}
+            .caption-wraper .caption{
+            position: relative;left:-50%;
+            background-color: rgba(0, 0, 0, 0.54);
+            padding: 0.4em 1em;
+            color:#fff;
+            -webkit-border-radius: 1.2em;
+            -moz-border-radius: 1.2em;
+            -ms-border-radius: 1.2em;
+            -o-border-radius: 1.2em;
+            border-radius: 1.2em;
+            }
+            @media (max-width: 767px){
+                .sy-box{margin: 12px -20px 0 -20px;}
+                .caption-wraper{left:0;bottom: 0.4em;}
+                .caption-wraper .caption{
+                left: 0;
+                padding: 0.2em 0.4em;
+                font-size: 0.92em;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                -ms-border-radius: 0;
+                -o-border-radius: 0;
+                border-radius: 0;}
+            }
+        </style>
+
+<!--引入bootstrap库，默认包含  -->
+      <link href="__TMPL__Public/assets/simpleboot/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="__TMPL__Public/assets/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="__TMPL__Public/assets/simpleboot/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<!--引入bootstrap库，默认包含  -->
+<script type="text/javascript" src="__TMPL__Public/assets/simpleboot/bootstrap/js/bootstrap.min.js"></script>
+
+
+<foreach name="touchdata" item="vo" >
+<input type="hidden" value="{$vo.qq}" id="qq">
+<input type="hidden" value="{$vo.phone}" id="phone">
+</foreach>
+<style type="text/css">
+    #lookmore{
+    background-color:#337Ab7;
+    color: #fcfcfa;
+}
+.hotnew{
+    border-bottom: 2px solid #337ab7 !important;
+}
+
+</style>
+
+<!-- QQ -->
+<link rel="stylesheet" href="__TMPL__Public/QQ/css/lrtk.css">
+
+<script type="text/javascript" src="__TMPL__Public/QQ/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/QQ/js/lrtk.js"></script>
+    </head>
+
+
+
+

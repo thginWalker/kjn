@@ -1,0 +1,16 @@
+<?php
+    @session_start();
+    $counter = intval(file_get_contents("counter.dat"));
+    if(!$_SESSION['jbxue.com'])
+    {
+     $_SESSION['jbxue.com'] = true;
+     $counter++;
+     $fp = fopen("counter.dat","w");
+     fwrite($fp, $counter);
+     fclose($fp);
+    }
+
+$link=mysql_connect("localhost","root","root");
+$db_selected=mysql_select_db("thinkcmf",$link);
+$result=mysql_query("update cmf_statistics set statistics_number='$counter' where id=1",$link);
+?>

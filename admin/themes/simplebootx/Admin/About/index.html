@@ -1,0 +1,61 @@
+<include file="Public:base" />
+
+
+      <link href="__TMPL__Public/Join/css/index.css" rel="stylesheet">
+
+<style type="text/css">
+#main{
+   width: 80%;
+    position: relative;
+    left: 30px;
+    top:-30px;
+
+}
+  .divposition{
+ position: relative;
+    top: 20px;
+    left: 15px;
+  }
+   th{
+text-align: center;
+vertical-align:middle !important;
+}
+  td{
+text-align: center;
+vertical-align:middle !important;
+}
+</style>
+
+
+<div id="main">
+      <ul id="myTab" class="nav nav-tabs">
+         <li class="active"><a href="#bridf" data-toggle="tab">公司简介
+            </a></li>
+         <li><a href="#honor" data-toggle="tab">公司荣誉</a></li>
+         <li><a href="#qualifications" data-toggle="tab">资质认证
+            </a></li>
+         <li><a href="#partner" data-toggle="tab">合作伙伴</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+
+         <div class="tab-pane fade in active" id="bridf">
+          <include file=".\admin\themes\simplebootx\admin\About\bridf.html"/>
+         </div>
+
+         <div class="tab-pane fade" id="honor">
+          <include file=".\admin\themes\simplebootx\admin\About\honor.html"/>
+         </div>
+
+         <div class="tab-pane fade" id="qualifications">
+          <include file=".\admin\themes\simplebootx\admin\About\qualifications.html"/>
+         </div>
+
+         <div class="tab-pane fade" id="partner">
+
+              <include file=".\admin\themes\simplebootx\admin\About\partner.html"/>
+
+         </div>
+
+      </div>
+</div>
+
